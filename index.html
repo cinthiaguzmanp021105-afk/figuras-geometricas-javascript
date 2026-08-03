@@ -1,0 +1,183 @@
+</style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- 1. PRESENTACIÓN PERSONAL -->
+        <div class="profile-card">
+            <h1> ¡Hola! Bienvenidos </h1>
+ <p id="presentacion-texto">
+    Mi nombre es <strong>Cinthia</strong>. Estudio la carrera de Diseño Gráfico y Animación Digital. Estoy en el Noveno Cuatrimestre de la Universidad Autónoma de Tamaulipas. Esta es mi práctica de JavaScript para calcular el área y el perímetro de tres figuras geométricas.
+</p>
+
+<p id="presentacion-texto">
+Cálculo del área y perímetro de figuras geométricas
+</p>
+
+<script>
+
+var diagonalMayorRombo;
+var diagonalMenorRombo;
+var ladoRombo;
+
+var baseMayorTrapecio;
+var baseMenorTrapecio;
+var alturaTrapecio;
+var ladoTrapecio;
+
+var ladoHexagono;
+
+
+/* Pido datos en un diálogo del explorador */
+
+/* 2. ROMBO */
+
+do {
+    diagonalMayorRombo = prompt("Dame la diagonal mayor del rombo:");
+    if (diagonalMayorRombo === "" || diagonalMayorRombo === null || isNaN(diagonalMayorRombo)) {
+        alert("⚠ Debes ingresar un número válido.");
+    }
+} while (diagonalMayorRombo === "" || diagonalMayorRombo === null || isNaN(diagonalMayorRombo));
+
+do {
+    diagonalMenorRombo = prompt("Dame la diagonal menor del rombo:");
+    if (diagonalMenorRombo === "" || diagonalMenorRombo === null || isNaN(diagonalMenorRombo)) {
+        alert("⚠ Debes ingresar un número válido.");
+    }
+} while (diagonalMenorRombo === "" || diagonalMenorRombo === null || isNaN(diagonalMenorRombo));
+
+do {
+    ladoRombo = prompt("Dame el lado del rombo:");
+    if (ladoRombo === "" || ladoRombo === null || isNaN(ladoRombo)) {
+        alert("⚠ Debes ingresar un número válido.");
+    }
+} while (ladoRombo === "" || ladoRombo === null || isNaN(ladoRombo));
+
+/* 3. TRAPECIO ISÓSCELES */
+
+do {
+    baseMayorTrapecio = prompt("Dame la base mayor del trapecio isósceles:");
+    if (baseMayorTrapecio === "" || baseMayorTrapecio === null || isNaN(baseMayorTrapecio)) {
+        alert("⚠ Debes ingresar un número válido.");
+    }
+} while (baseMayorTrapecio === "" || baseMayorTrapecio === null || isNaN(baseMayorTrapecio));
+
+do {
+    baseMenorTrapecio = prompt("Dame la base menor del trapecio isósceles:");
+    if (baseMenorTrapecio === "" || baseMenorTrapecio === null || isNaN(baseMenorTrapecio)) {
+        alert("⚠ Debes ingresar un número válido.");
+    }
+} while (baseMenorTrapecio === "" || baseMenorTrapecio === null || isNaN(baseMenorTrapecio));
+
+do {
+    alturaTrapecio = prompt("Dame la altura del trapecio isósceles:");
+    if (alturaTrapecio === "" || alturaTrapecio === null || isNaN(alturaTrapecio)) {
+        alert("⚠ Debes ingresar un número válido.");
+    }
+} while (alturaTrapecio === "" || alturaTrapecio === null || isNaN(alturaTrapecio));
+
+do {
+    ladoTrapecio = prompt("Dame el lado del trapecio isósceles:");
+    if (ladoTrapecio === "" || ladoTrapecio === null || isNaN(ladoTrapecio)) {
+        alert("⚠ Debes ingresar un número válido.");
+    }
+} while (ladoTrapecio === "" || ladoTrapecio === null || isNaN(ladoTrapecio));
+
+/* 4. HEXÁGONO REGULAR */
+
+do {
+    ladoHexagono = prompt("Dame el lado del hexágono regular:");
+    if (ladoHexagono === "" || ladoHexagono === null || isNaN(ladoHexagono)) {
+        alert("⚠ Debes ingresar un número válido.");
+    }
+} while (ladoHexagono === "" || ladoHexagono === null || isNaN(ladoHexagono));
+
+
+
+
+/* Hago operaciones */
+
+diagonalMayorRombo = Number(diagonalMayorRombo);
+diagonalMenorRombo = Number(diagonalMenorRombo);
+ladoRombo = Number(ladoRombo);
+
+baseMayorTrapecio = Number(baseMayorTrapecio);
+baseMenorTrapecio = Number(baseMenorTrapecio);
+alturaTrapecio = Number(alturaTrapecio);
+ladoTrapecio = Number(ladoTrapecio);
+
+ladoHexagono = Number(ladoHexagono);
+
+// Rombo
+var perimetroRombo = ladoRombo * 4;
+var areaRombo = (diagonalMayorRombo * diagonalMenorRombo) / 2;
+
+// Trapecio isósceles
+var perimetroTrapecio = baseMayorTrapecio + baseMenorTrapecio + (2 * ladoTrapecio);
+var areaTrapecio = ((baseMayorTrapecio + baseMenorTrapecio) * alturaTrapecio) / 2;
+
+// Hexágono regular
+var perimetroHexagono = ladoHexagono * 6;
+var areaHexagono = (3 * Math.sqrt(3) * Math.pow(ladoHexagono, 2)) / 2;
+
+/* Escribo resultados */
+
+
+// Rombo
+document.write("<h2>ROMBO</h2>");
+document.write("Diagonal mayor: " + diagonalMayorRombo);
+document.write("<br>");
+document.write("Diagonal menor: " + diagonalMenorRombo);
+document.write("<br>");
+document.write("Lado: " + ladoRombo);
+document.write("<br><br>");
+
+document.write("<strong>Resultado:</strong>");
+document.write("<br>");
+document.write("Área del rombo: " + areaRombo);
+document.write("<br>");
+document.write("Perímetro del rombo: " + perimetroRombo);
+
+document.write("<br><br>");
+
+
+// Trapecio
+document.write("<h2>TRAPECIO ISÓSCELES</h2>");
+document.write("Base mayor: " + baseMayorTrapecio);
+document.write("<br>");
+document.write("Base menor: " + baseMenorTrapecio);
+document.write("<br>");
+document.write("Altura: " + alturaTrapecio);
+document.write("<br>");
+document.write("Lado: " + ladoTrapecio);
+document.write("<br><br>");
+
+document.write("<strong>Resultado:</strong>");
+document.write("<br>");
+document.write("Área del trapecio: " + areaTrapecio);
+document.write("<br>");
+document.write("Perímetro del trapecio: " + perimetroTrapecio);
+
+document.write("<br><br>");
+
+
+// Hexágono
+document.write("<h2>HEXÁGONO REGULAR</h2>");
+document.write("Lado: " + ladoHexagono);
+document.write("<br><br>");
+
+document.write("<strong>Resultado:</strong>");
+document.write("<br>");
+document.write("Área del hexágono: " + areaHexagono.toFixed(2));
+document.write("<br>");
+document.write("Perímetro del hexágono: " + perimetroHexagono);
+
+
+
+</script>
+
+    </div>
+</body>
+</html>
+
